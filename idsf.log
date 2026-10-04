@@ -1,0 +1,49 @@
+[2025-10-16 21:32:05,183] INFO - تم تدريب نموذج RandomForest بسيط وحفظه محلياً.
+[2025-10-16 21:32:05,207] INFO - تم تعطيل مستمع الحزم عبر الإعدادات.
+[2025-10-16 21:34:45,590] INFO - تم تعطيل مستمع الحزم عبر الإعدادات.
+[2025-10-17 01:00:49,372] INFO - تم تعطيل مستمع الحزم عبر الإعدادات.
+[2025-10-17 01:08:35,165] INFO - تم تعطيل مستمع الحزم عبر الإعدادات.
+[2025-10-17 01:12:03,528] INFO - تم تعطيل مستمع الحزم عبر الإعدادات.
+[2025-10-17 01:12:14,527] ERROR - Exception on /api/monitoring/start [POST]
+Traceback (most recent call last):
+  File "C:\Users\MADMA\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\MADMA\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\MADMA\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\MADMA\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\TRSI\VSCode\Projects\IDSF\web\flask_blueprint.py", line 70, in start_monitoring
+    from app import start_packet_listener
+ImportError: cannot import name 'start_packet_listener' from 'app' (C:\Users\TRSI\VSCode\Projects\IDSF\app.py)
+[2025-10-17 01:12:26,775] ERROR - Exception on /api/monitoring/start [POST]
+Traceback (most recent call last):
+  File "C:\Users\MADMA\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\MADMA\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\MADMA\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\MADMA\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\TRSI\VSCode\Projects\IDSF\web\flask_blueprint.py", line 70, in start_monitoring
+    from app import start_packet_listener
+ImportError: cannot import name 'start_packet_listener' from 'app' (C:\Users\TRSI\VSCode\Projects\IDSF\app.py)
+[2025-11-30 01:15:49,027] ERROR - فشل تحميل النموذج: node array from the pickle has an incompatible dtype:
+- expected: {'names': ['left_child', 'right_child', 'feature', 'threshold', 'impurity', 'n_node_samples', 'weighted_n_node_samples', 'missing_go_to_left'], 'formats': ['<i8', '<i8', '<i8', '<f8', '<f8', '<i8', '<f8', 'u1'], 'offsets': [0, 8, 16, 24, 32, 40, 48, 56], 'itemsize': 64}
+- got     : [('left_child', '<i8'), ('right_child', '<i8'), ('feature', '<i8'), ('threshold', '<f8'), ('impurity', '<f8'), ('n_node_samples', '<i8'), ('weighted_n_node_samples', '<f8')]
+[2025-11-30 01:15:49,027] INFO - تم تعطيل مستمع الحزم عبر الإعدادات.
+[2025-11-30 01:16:01,081] INFO - تم بدء مستمع الحزم في الخلفية.
+[2025-11-30 01:16:12,699] WARNING - تم رصد هجوم ARP محتمل على 192.168.1.10 بمؤشرات {'AA:BB:CC:DD:EE:01', 'AA:BB:CC:DD:EE:03'}
+[2025-11-30 01:16:20,339] WARNING - تم رصد هجوم ARP محتمل على 192.168.1.30 بمؤشرات {'AA:BB:CC:DD:EE:01', 'AA:BB:CC:DD:EE:03'}
+[2025-11-30 01:16:36,488] WARNING - تم رصد هجوم ARP محتمل على 10.0.0.5 بمؤشرات {'AA:BB:CC:DD:EE:01', 'AA:BB:CC:DD:EE:02'}
+[2025-11-30 01:16:46,076] WARNING - تم رصد هجوم ARP محتمل على 10.0.0.5 بمؤشرات {'AA:BB:CC:DD:EE:01', 'AA:BB:CC:DD:EE:02'}
+[2025-11-30 01:17:05,378] WARNING - تم رصد هجوم ARP محتمل على 192.168.1.30 بمؤشرات {'AA:BB:CC:DD:EE:01', 'AA:BB:CC:DD:EE:03'}
+[2025-11-30 01:17:06,630] WARNING - تم رصد هجوم ARP محتمل على 10.0.0.5 بمؤشرات {'AA:BB:CC:DD:EE:01', 'AA:BB:CC:DD:EE:03', 'AA:BB:CC:DD:EE:02'}
+[2025-11-30 01:17:11,090] WARNING - تم رصد هجوم ARP محتمل على 192.168.1.10 بمؤشرات {'AA:BB:CC:DD:EE:01', 'AA:BB:CC:DD:EE:03'}
+[2025-11-30 01:17:51,008] WARNING - تم رصد هجوم ARP محتمل على 192.168.1.30 بمؤشرات {'AA:BB:CC:DD:EE:01', 'AA:BB:CC:DD:EE:03'}
+[2025-12-01 23:04:45,214] ERROR - فشل تحميل النموذج: node array from the pickle has an incompatible dtype:
+- expected: {'names': ['left_child', 'right_child', 'feature', 'threshold', 'impurity', 'n_node_samples', 'weighted_n_node_samples', 'missing_go_to_left'], 'formats': ['<i8', '<i8', '<i8', '<f8', '<f8', '<i8', '<f8', 'u1'], 'offsets': [0, 8, 16, 24, 32, 40, 48, 56], 'itemsize': 64}
+- got     : [('left_child', '<i8'), ('right_child', '<i8'), ('feature', '<i8'), ('threshold', '<f8'), ('impurity', '<f8'), ('n_node_samples', '<i8'), ('weighted_n_node_samples', '<f8')]
+[2025-12-01 23:04:45,216] INFO - تم تعطيل مستمع الحزم عبر الإعدادات.

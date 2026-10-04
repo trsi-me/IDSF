@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IDSF - نظام كشف التسلل الذكي</title>
+    <link rel="stylesheet" href="/static/assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <header class="app-header">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo">
+                    <i class="fa fa-shield-alt"></i>
+                    <span class="logo-text">IDSF</span>
+                </div>
+                <div class="tagline">نظام كشف التسلل الذكي - مراقبة الشبكة بالذكاء الاصطناعي</div>
+            </div>
+            <div class="header-stats">
+                <span class="stat-item">
+                    <i class="fa fa-network-wired"></i>
+                    <span id="header-packets">0</span>
+                </span>
+                <span class="stat-item">
+                    <i class="fa fa-exclamation-triangle"></i>
+                    <span id="header-alerts">0</span>
+                </span>
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <section class="status-card">
+            <h2><i class="fa fa-broadcast-tower"></i> الحالة الحالية</h2>
+            <div id="network-status" class="status">...جارِ التحديث</div>
+            <div class="status-counters">
+                <span>الحزم: <strong id="count-packets">0</strong></span>
+                <span>ARP: <strong id="count-arp">0</strong></span>
+                <span>ML: <strong id="count-ml">0</strong></span>
+            </div>
+        </section>
+
+        <section class="control-card">
+            <h2><i class="fa fa-play-circle"></i> تحكم المراقبة</h2>
+            <div class="monitoring-controls">
+                <button id="start-monitoring" class="btn btn-start">
+                    <i class="fa fa-play"></i> بدء المراقبة
+                </button>
+                <button id="stop-monitoring" class="btn btn-stop" style="display: none;">
+                    <i class="fa fa-stop"></i> إيقاف المراقبة
+                </button>
+            </div>
+            <div class="control-info">
+                <small>اضغط "بدء المراقبة" لبدء تحليل حركة الشبكة مثل Wireshark</small>
+            </div>
+        </section>
+
+        <section class="alerts-card">
+            <h2><i class="fa fa-exclamation-triangle"></i> آخر التنبيهات</h2>
+            <ul id="alerts-list"></ul>
+        </section>
+
+        <section class="settings-card">
+            <h2><i class="fa fa-cog"></i> إعدادات النظام</h2>
+            <div class="settings-grid">
+                <h3>وضع الاستجابة:</h3>
+                <label>
+                    <input type="radio" name="response_mode" value="none" checked> لا شيء
+                </label>
+                <label>
+                    <input type="radio" name="response_mode" value="vpn"> تفعيل VPN تلقائياً
+                </label>
+                <label>
+                    <input type="radio" name="response_mode" value="https"> فرض HTTPS تلقائياً
+                </label>
+                <label>
+                    <input type="radio" name="response_mode" value="both"> كلاهما
+                </label>
+
+                <h3>مستمع الحزم:</h3>
+                <label>
+                    <input type="checkbox" id="enable-listener"> تفعيل مراقبة الشبكة
+                </label>
+                <label>
+                    <input type="checkbox" id="real-capture"> استخدام الالتقاط الحقيقي (يتطلب صلاحيات)
+                </label>
+            </div>
+            <button id="save-settings" class="btn"><i class="fa fa-save"></i> حفظ الإعدادات</button>
+            <a href="/settings" class="btn btn-link"><i class="fa fa-sliders-h"></i> صفحة الإعدادات المتقدمة</a>
+        </section>
+
+        <section class="terminal-card">
+            <h2><i class="fa fa-stream"></i> طرفية حركة الشبكة - مثل Wireshark</h2>
+            <div id="net-terminal" class="terminal"></div>
+            <div class="terminal-info">
+                <small>عرض مباشر لحركة الشبكة - اضغط "بدء المراقبة" لرؤية الحزم الحية</small>
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/js/main.js"></script>
+    <script>
+        // تهيئة بسيطة عند التحميل
+        document.addEventListener('DOMContentLoaded', () => {
+            window.IDSF.init();
+        });
+    </script>
+</body>
+
+</html>

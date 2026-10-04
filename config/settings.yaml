@@ -1,0 +1,20 @@
+response_mode: none
+vpn:
+  script: vpn_client_windows.bat
+  timeout: 60
+https:
+  cert: certs/server.crt
+  key: certs/server.key
+detection:
+  arp:
+    mac_change_threshold: 1
+    window_seconds: 60
+  ml:
+    model_path: models/rf_model.pkl
+    data_path: data/sample_nslkdd.csv
+app:
+  host: 0.0.0.0
+  port: 5000
+  enable_listener: false
+  use_real_capture: false
+
